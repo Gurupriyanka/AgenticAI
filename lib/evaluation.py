@@ -8,6 +8,11 @@ from lib.llm import LLM
 from lib.messages import AIMessage, BaseMessage
 from lib.parsers import PydanticOutputParser
 
+from pydantic import BaseModel
+
+class EvaluationReport(BaseModel):
+    useful: bool
+    description: str
 
 class TaskCompletionMetrics(BaseModel):
     """Metrics for task completion evaluation"""
